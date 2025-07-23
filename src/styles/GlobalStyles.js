@@ -68,7 +68,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
+    
   /* Creating animations for dark mode */
   transition: background-color 0.3s, border 0.3s;
 }
@@ -80,7 +80,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: var(--color-grey-700);
-
+  cursor: default;
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;
@@ -95,9 +95,9 @@ select {
   color: inherit;
 }
 
-button {
+/* button {
   cursor: pointer;
-}
+} */
 
 *:disabled {
   cursor: not-allowed;

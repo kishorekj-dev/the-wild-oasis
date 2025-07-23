@@ -86,12 +86,17 @@ function Toggle({ id }) {
   const { openId, open, close, setPosition } = useContext(MenusContext);
 
   function handleClick(e) {
+    e.stopPropagation();
     const rect = e.target.closest("button").getBoundingClientRect();
     setPosition({
       x: window.innerWidth - rect.width - rect.x,
       y: rect.y + rect.height + 8,
     });
-    openId === "" || openId !== id ? open(id) : close();
+    if (openId === id) {
+      close();
+    } else {
+      open(id);
+    }
   }
   return (
     <StyledToggle onClick={handleClick}>
@@ -113,8 +118,9 @@ function List({ id, children }) {
 
 function Button({ children, icon, onClick }) {
   const { close } = useContext(MenusContext);
-  function handleClick() {
-    onClick?.();
+  function handleClick(e) {
+    e.stopPropagation();
+    onClick?.(e);
     close();
   }
   return (

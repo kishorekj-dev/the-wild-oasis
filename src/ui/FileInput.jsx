@@ -13,7 +13,7 @@ const FileInput = styled.input.attrs({ type: "file" })`
     border: none;
     color: var(--color-brand-50);
     background-color: var(--color-brand-600);
-    cursor: pointer;
+    cursor: default;
     transition: color 0.2s, background-color 0.2s;
 
     &:hover {
