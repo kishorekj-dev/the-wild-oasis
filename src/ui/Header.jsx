@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Logout from "../features/authentication/Logout";
 
 const Styledheader = styled.header`
   background-color: var(--color-grey-0);
@@ -9,7 +10,9 @@ const Styledheader = styled.header`
 function Header() {
   return (
     <div>
-      <Styledheader>Header</Styledheader>
+      <Styledheader>
+        <Logout />
+      </Styledheader>
     </div>
   );
 }
