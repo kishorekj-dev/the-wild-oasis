@@ -21,7 +21,7 @@ function SignupForm() {
     );
   }
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
       <FormRow label="Full name" error={errors?.fullName?.message}>
         <Input
           type="text"
@@ -38,6 +38,7 @@ function SignupForm() {
           id="email"
           disabled={isLoading}
           placeholder="Enter your email address"
+          autoComplete="off"
           {...register("email", {
             required: "This Field is required",
             pattern: {
@@ -57,6 +58,7 @@ function SignupForm() {
           id="password"
           disabled={isLoading}
           placeholder="Enter your password"
+          autoComplete="new-password"
           {...register("password", {
             required: "This Field is required",
             minLength: {
