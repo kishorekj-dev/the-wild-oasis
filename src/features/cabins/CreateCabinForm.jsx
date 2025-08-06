@@ -44,7 +44,7 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
       );
   }
   function onError(errors) {
-    // console.log(errors);
+    console.log(errors);
   }
   const regularPrice = watch("regularPrice");
   return (
